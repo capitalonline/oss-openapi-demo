@@ -24,8 +24,8 @@ OPENAPI_URL = 'http://cdsapi.capitalonline.net/oss'
 Endpoint = 'oss-fra.cdsgss.com'
 
 # OPENAPI USER AK SK
-a_key = 'dcd51ecc82de11ebb30ade87d1602e66'
-s_key = '96a2030c5cab29f1c50a54947fcaacc4'
+a_key = ''
+s_key = ''
 
 
 class PayloadType:
@@ -261,11 +261,13 @@ class OpenAPI(object):
 
 if __name__ == '__main__':
     api = OpenAPI(a_key, s_key)
-    print(api.add_object_tags('init', '77.jpg'))
-    print(api.get_object_tags('init', '77.jpg'))
-    print(api.del_object_tags('init', '77.jpg'))
-    print(api.add_bucket_tags('init'))
-    print(api.get_bucket_tags('init'))
-    print(api.del_bucket_tags('init'))
-    print(api.get_notify_config('init'))
-    print(api.add_notify_config('init'))
+    bucket = ''
+    filename = ''
+    print(api.add_object_tags(bucket, filename))
+    print(api.get_object_tags(bucket, filename))
+    print(api.del_object_tags(bucket, filename))
+    print(api.add_bucket_tags(bucket))
+    print(api.get_bucket_tags(bucket))
+    print(api.del_bucket_tags(bucket))
+    print(api.get_notify_config(bucket))
+    print(api.add_notify_config(bucket))
